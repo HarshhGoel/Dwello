@@ -3,190 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwello | The Full Urban Ecosystem</title>
+    <title>Dwello | The Full Urban Ecosystem for Greater Noida</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-        .feature-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.15); }
-        .split-mockup { background: linear-gradient(145deg, #1e293b, #0f172a); }
-        .gradient-border { border: 2px solid; border-image: linear-gradient(to right, #4f46e5, #9333ea) 1; }
-        @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-        .animate-pulse-soft { animation: pulse-soft 3s infinite; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfdfd; }
+        .glass-header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .hero-gradient { background: radial-gradient(circle at top right, #eef2ff, transparent); }
+        .bento-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #f1f5f9; }
+        .bento-card:hover { transform: translateY(-8px); shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #4f46e5; }
+        .split-ui-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="text-slate-900">
 
-    <header class="glass-nav sticky top-0 z-[100] border-b border-slate-100">
+    <header class="glass-header sticky top-0 z-[100]">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black text-indigo-600 tracking-tighter">DWELLO.</a>
-            <div class="hidden lg:flex space-x-8 font-semibold text-slate-600">
-                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
-                <a href="#listings" class="hover:text-indigo-600 transition">Homes</a>
-                <a href="#split-bill" class="hover:text-indigo-600 transition">Split Bill</a>
-                <a href="#community" class="hover:text-indigo-600 transition">Community</a>
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-black tracking-tighter text-indigo-600">DWELLO.</span>
             </div>
-            <button class="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-indigo-200 transition">Download App</button>
+            <div class="hidden lg:flex items-center space-x-10 font-bold text-slate-600 uppercase text-xs tracking-widest">
+                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
+                <a href="#split-bill" class="hover:text-indigo-600 transition">Splitwise Mode</a>
+                <a href="#community" class="hover:text-indigo-600 transition">Community</a>
+                <a href="#listings" class="hover:text-indigo-600 transition">Homes</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:scale-105 transition">Join Now</button>
+            </div>
         </nav>
     </header>
 
-    <section class="bg-white pt-20 pb-32">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
-                    Moving to a new city? <br>
-                    <span class="text-indigo-600">We've got your back.</span>
-                </h1>
-                <p class="text-xl text-slate-500 mb-10 leading-relaxed">
-                    Find verified flats, rent essential appliances, and connect with trusted local services in Greater Noida. Settle in faster, without the hassle.
-                </p>
-                <div class="bg-slate-100 p-2 rounded-3xl inline-flex mb-6">
-                    <button class="px-6 py-2 rounded-2xl bg-white shadow-sm font-bold text-indigo-600">Find Home</button>
-                    <button class="px-6 py-2 rounded-2xl font-semibold text-slate-500 hover:text-indigo-600">Rentals</button>
-                    <button class="px-6 py-2 rounded-2xl font-semibold text-slate-500 hover:text-indigo-600">Services</button>
-                </div>
-                <div class="flex shadow-2xl rounded-3xl overflow-hidden max-w-lg">
-                    <input type="text" placeholder="Search flats, PGs in Greater Noida..." class="flex-grow p-5 outline-none">
-                    <button class="bg-indigo-600 text-white px-8 font-bold">Find My Nest</button>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full" alt="Luxury Living">
-                <div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 animate-pulse-soft">
-                    <p class="text-indigo-600 font-black text-4xl">Absolutely FREE!</p>
-                    <p class="text-slate-500 font-medium">Rental Agreement & Police Verification</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-indigo-600 text-white">
-        <div class="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div><p class="text-4xl font-black">150+</p><p class="opacity-80">Verified Listings</p></div>
-            <div><p class="text-4xl font-black">Lowest</p><p class="opacity-80">Brokerage Guarantee</p></div>
-            <div><p class="text-4xl font-black">24-Hour</p><p class="opacity-80">Support Guarantee</p></div>
-            <div><p class="text-4xl font-black">50+</p><p class="opacity-80">Service Partners</p></div>
-        </div>
-    </section>
-
-    <section id="split-bill" class="py-24 bg-slate-900 overflow-hidden">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2">
-                <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">Effortless Bill Splitting. <br><span class="text-indigo-400 font-medium">No awkward talks.</span></h2>
-                <p class="text-slate-400 text-lg mb-10">Say goodbye to awkward money chats. Share expenses for rent, utilities, maids, and more with your flatmates in just a single tap. It’s fast, simple, and seamless.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center text-white"><i class="fas fa-check-circle text-green-400 mr-3"></i> Real-time payment tracking</div>
-                    <div class="flex items-center text-white"><i class="fas fa-check-circle text-green-400 mr-3"></i> Automatic UPI reminders</div>
-                    <div class="flex items-center text-white"><i class="fas fa-check-circle text-green-400 mr-3"></i> Integrated with Dwello Wallet</div>
-                </div>
-                <button class="mt-12 bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-indigo-500 transition shadow-xl shadow-indigo-500/20">Split a Bill Now</button>
-            </div>
-            <div class="lg:w-1/2 split-mockup p-8 rounded-[3rem] border border-slate-700 shadow-2xl">
-                <div class="space-y-4">
-                    <div class="bg-slate-800/50 p-4 rounded-2xl flex justify-between items-center border border-slate-700">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white"><i class="fas fa-home"></i></div>
-                            <div><p class="text-white font-bold">Monthly Rent</p><p class="text-slate-500 text-sm">Flat 12B Crew</p></div>
-                        </div>
-                        <p class="text-white font-bold">₹15,000</p>
+    <main>
+        <section class="hero-gradient pt-16 pb-24">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Greater Noida's #1 Assistant</span>
+                    <h1 class="text-6xl lg:text-8xl font-black leading-[0.95] mb-8 tracking-tighter">
+                        Urban Living. <br><span class="text-indigo-600">Perfected.</span>
+                    </h1>
+                    <p class="text-xl text-slate-500 mb-10 max-w-lg leading-relaxed font-medium">
+                        Find verified flats, rent appliances, and manage your entire life from one powerful dashboard.
+                    </p>
+                    <div class="flex bg-white p-2 rounded-[2rem] shadow-2xl border border-slate-100 max-w-xl">
+                        <input type="text" placeholder="Search Sector 150, Alpha 1, Knowledge Park..." class="flex-grow bg-transparent px-6 py-4 outline-none font-medium">
+                        <button class="bg-indigo-600 text-white px-10 rounded-[1.5rem] font-black">Search</button>
                     </div>
-                    <div class="bg-slate-800/50 p-4 rounded-2xl flex justify-between items-center border border-slate-700 opacity-60">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white"><i class="fas fa-utensils"></i></div>
-                            <div><p class="text-white font-bold">Tiffin Service</p><p class="text-slate-500 text-sm">John & Rohit</p></div>
-                        </div>
-                        <p class="text-white font-bold">₹4,500</p>
-                    </div>
-                    <div class="bg-green-500 p-4 rounded-2xl text-center font-black text-white cursor-pointer hover:bg-green-400 transition">
-                        Split Equally (₹5,850/person)
+                </div>
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" class="rounded-[3rem] shadow-2xl" alt="Modern Indian Apartment">
+                    <div class="absolute -bottom-10 -right-10 bg-indigo-600 p-10 rounded-[2.5rem] shadow-2xl text-white">
+                        <p class="text-xs uppercase font-black tracking-widest opacity-80 mb-2">Exclusive Offer</p>
+                        <p class="text-4xl font-black">Free Police <br>Verification</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="community" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 order-2 lg:order-1">
-                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="rounded-[3rem] shadow-2xl" alt="Community">
+        <section id="services" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="mb-16">
+                    <h2 class="text-4xl font-black tracking-tighter">The Full Ecosystem</h2>
+                    <p class="text-slate-500">Everything a bachelor or newcomer needs in Greater Noida.</p>
                 </div>
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <h2 class="text-4xl font-black mb-6">Dwello <span class="text-indigo-600">Circle</span></h2>
-                    <p class="text-slate-500 text-lg mb-8">Moving to a new city can be lonely. Join the Dwello Circle to find weekend football groups, networking events, and local "secret" spots in Greater Noida.</p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                            <p class="font-black text-2xl text-indigo-600">Local Meetups</p>
-                            <p class="text-slate-500 text-sm">Coffee & Networking every Sunday.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bento-card p-10 rounded-[3rem] bg-slate-50">
+                        <div class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center shadow-sm mb-8"><i class="fas fa-home text-indigo-600 text-2xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Verified Flats</h3>
+                        <p class="text-slate-500 font-medium">Transparent listings with our lowest brokerage guarantee. Handpicked for quality.</p>
+                    </div>
+                    <div class="bento-card p-10 rounded-[3rem] bg-indigo-600 text-white lg:scale-105">
+                        <div class="w-16 h-16 bg-indigo-500 rounded-3xl flex items-center justify-center mb-8"><i class="fas fa-box-open text-white text-2xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Smart Rentals</h3>
+                        <p class="text-indigo-100 font-medium">Rent ACs, fridges, and washers starting from ₹499/month. Zero hassle delivery.</p>
+                    </div>
+                    <div class="bento-card p-10 rounded-[3rem] bg-slate-50">
+                        <div class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center shadow-sm mb-8"><i class="fas fa-utensils text-indigo-600 text-2xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Need a Cook?</h3>
+                        <p class="text-slate-500 font-medium">Profiles of verified local cooks with reviews. Book a free trial meal today.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="split-bill" class="py-24 bg-white border-y border-slate-100">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+                <div class="split-ui-gradient p-12 rounded-[4rem] shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h4 class="text-indigo-400 font-black mb-8 uppercase tracking-widest text-sm">Split-Bill Dashboard</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl flex justify-between items-center border border-white/10">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center text-white"><i class="fas fa-bolt"></i></div>
+                                    <div><p class="text-white font-bold">Electricity Bill</p><p class="text-slate-400 text-xs">Shared with Rohit & Aman</p></div>
+                                </div>
+                                <p class="text-white font-black text-xl">₹2,400</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl flex justify-between items-center border border-white/10">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white"><i class="fas fa-shopping-basket"></i></div>
+                                    <div><p class="text-white font-bold">Grocery Split</p><p class="text-slate-400 text-xs">Market - Sector 18</p></div>
+                                </div>
+                                <p class="text-white font-black text-xl">₹1,250</p>
+                            </div>
+                            <div class="bg-indigo-600 text-white p-5 rounded-3xl text-center font-black cursor-pointer hover:bg-indigo-500 transition shadow-xl">
+                                Settle All Expenses
+                            </div>
                         </div>
-                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                            <p class="font-black text-2xl text-indigo-600">Hobby Hubs</p>
-                            <p class="text-slate-500 text-sm">Join 20+ active sport & gaming clubs.</p>
+                    </div>
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/20 blur-[80px]"></div>
+                </div>
+                <div>
+                    <h2 class="text-5xl font-black mb-8 tracking-tighter leading-tight">Effortless <br>Bill Splitting.</h2>
+                    <p class="text-slate-500 text-lg mb-8 leading-relaxed">
+                        Say goodbye to awkward money chats. Share expenses for rent, utilities, and maids with your flatmates in a single tap. It's integrated directly with your Dwello profile.
+                    </p>
+                    <ul class="space-y-4 font-bold text-slate-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-600 mr-3"></i> Automated UPI reminders</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-600 mr-3"></i> Equal or Custom splits</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-600 mr-3"></i> Monthly expense analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl font-black mb-6 tracking-tighter">Dwello <span class="text-indigo-600">Circle.</span></h2>
+                <p class="text-slate-500 text-lg mb-16 max-w-2xl mx-auto font-medium">Never feel like a stranger. Join the exclusive community of professionals and students in Greater Noida.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="rounded-3xl mb-6 h-48 w-full object-cover" alt="Networking">
+                        <h4 class="text-xl font-black mb-2">Weekend Football</h4>
+                        <p class="text-slate-500 text-sm">Join the 150+ member sports club at Knowledge Park fields.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm">
+                        <img src="https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg" class="rounded-3xl mb-6 h-48 w-full object-cover" alt="Meetups">
+                        <h4 class="text-xl font-black mb-2">Tech Meetups</h4>
+                        <p class="text-slate-500 text-sm">Monthly networking for IT professionals moving to the city.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm">
+                        <img src="https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg" class="rounded-3xl mb-6 h-48 w-full object-cover" alt="Art">
+                        <h4 class="text-xl font-black mb-2">House Parties</h4>
+                        <p class="text-slate-500 text-sm">Verified social events hosted by Dwello curated members.</p>
+                    </div>
+                </div>
+                <button class="mt-16 bg-slate-900 text-white px-12 py-5 rounded-3xl font-black hover:bg-indigo-600 transition shadow-2xl">Browse Circle Events</button>
+            </div>
+        </section>
+
+        <section id="listings" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-4xl font-black tracking-tighter">Featured Homes</h2>
+                        <p class="text-slate-500 font-medium">Physically verified by the Dwello team.</p>
+                    </div>
+                    <a href="#" class="text-indigo-600 font-black uppercase tracking-widest text-xs">View All 150+ Homes</a>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden rounded-[2.5rem] mb-6">
+                            <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700" alt="Home">
+                        </div>
+                        <h4 class="text-xl font-black">Modern 1BHK Studio</h4>
+                        <p class="text-slate-400 font-bold mb-4">Knowledge Park III</p>
+                        <div class="flex justify-between items-center border-t border-slate-100 pt-4">
+                            <p class="text-indigo-600 font-black text-2xl">₹15,000<span class="text-slate-400 text-xs font-medium">/mo</span></p>
+                            <button class="bg-slate-900 text-white px-6 py-3 rounded-2xl text-sm font-bold">Details</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-16">On-Demand Services (Pay-Per-Use)</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="feature-card bg-white p-8 rounded-[2rem] border border-slate-100">
-                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-utensils"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Need a Cook?</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Profiles of Dwello-Verified cooks, read reviews, and book a free trial instantly.</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-[2rem] border border-slate-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-wifi"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Need Wi-Fi?</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Pre-negotiated plans with installation within 48 hours for bachelors.</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-[2rem] border border-slate-100">
-                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-broom"></i></div>
-                    <h3 class="text-xl font-bold mb-3">House a Mess?</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Professional deep cleaning service starting at just ₹499.</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-[2rem] border border-slate-100">
-                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-tools"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Leaky Tap?</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Verified plumbers and electricians available this afternoon.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <section id="listings" class="py-24 bg-white">
+    <footer class="bg-white py-20 border-t border-slate-100">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-black mb-16">Explore Our Top Properties</h2>
-            <div class="grid lg:grid-cols-3 gap-10 text-left">
-                <div class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-[2rem] mb-6">
-                        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" class="group-hover:scale-110 transition duration-500" alt="Home">
-                    </div>
-                    <p class="text-indigo-600 font-bold mb-2">Knowledge Park III</p>
-                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Modern 1BHK near Pari Chowk</h3>
-                    <p class="text-slate-500 mb-4">₹15,000 / month</p>
-                    <button class="w-full py-4 border-2 border-slate-900 rounded-2xl font-bold group-hover:bg-slate-900 group-hover:text-white transition">View Details</button>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-20 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black text-white mb-8 italic">DWELLO.</h2>
-            <p class="max-w-md mx-auto mb-10">The marketplace of verified, on-demand services that a bachelor actually needs.</p>
-            <div class="flex justify-center space-x-6 text-2xl mb-12">
-                <i class="fab fa-instagram hover:text-white transition cursor-pointer"></i>
-                <i class="fab fa-twitter hover:text-white transition cursor-pointer"></i>
-                <i class="fab fa-linkedin hover:text-white transition cursor-pointer"></i>
+            <h2 class="text-4xl font-black text-indigo-600 tracking-tighter mb-8">DWELLO.</h2>
+            <div class="flex justify-center space-x-12 mb-12 font-bold text-slate-400">
+                <a href="#" class="hover:text-slate-900">About</a>
+                <a href="#" class="hover:text-slate-900">Partners</a>
+                <a href="#" class="hover:text-slate-900">Contact</a>
+                <a href="#" class="hover:text-slate-900">Legal</a>
             </div>
-            <p class="text-sm">© 2025 Dwello Living Tech. Settle in smarter.</p>
+            <p class="text-slate-300 text-sm font-medium">© 2025 Dwello Assistant. All rights reserved. <br>Built with Nano Banana AI.</p>
         </div>
     </footer>
 
