@@ -16,11 +16,28 @@
         .floating { animation: float 6s ease-in-out infinite; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
         .text-gradient { background: linear-gradient(to right, #4f46e5, #9333ea, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .feature-tag { @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 bg-white/10 backdrop-blur-md; }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 30s linear infinite;
+            width: 200%;
+        }
+        @keyframes blob {
+            0% { transform: scale(1); }
+            33% { transform: scale(1.1); }
+            66% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
     </style>
 </head>
 <body class="text-slate-900 overflow-x-hidden">
@@ -81,9 +98,9 @@
 
                 <div class="mt-10 flex items-center space-x-8">
                     <div class="flex -space-x-4">
-                        <img src="https://i.pravatar.cc/100?u=1" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
-                        <img src="https://i.pravatar.cc/100?u=2" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
-                        <img src="https://i.pravatar.cc/100?u=3" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
+                        <img src="https://i.pravatar.cc/100?u=1" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="User">
+                        <img src="https://i.pravatar.cc/100?u=2" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="User">
+                        <img src="https://i.pravatar.cc/100?u=3" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="User">
                         <div class="w-14 h-14 rounded-full bg-indigo-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold">+5k</div>
                     </div>
                     <div>
@@ -210,7 +227,7 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-4 pt-12">
-                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="rounded-[2.5rem] w-full h-64 object-cover shadow-lg" alt="">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="rounded-[2.5rem] w-full h-64 object-cover shadow-lg" alt="Community Event">
                         <div class="bg-indigo-600 p-8 rounded-[2.5rem] text-white">
                             <p class="text-3xl font-black">12+</p>
                             <p class="text-xs font-bold uppercase tracking-widest opacity-80">Weekly Events</p>
@@ -221,7 +238,7 @@
                             <p class="text-3xl font-black">5.2k</p>
                             <p class="text-xs font-bold uppercase tracking-widest opacity-80">Members</p>
                         </div>
-                        <img src="https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg" class="rounded-[2.5rem] w-full h-80 object-cover shadow-lg" alt="">
+                        <img src="https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg" class="rounded-[2.5rem] w-full h-80 object-cover shadow-lg" alt="Coworking Space">
                     </div>
                 </div>
             </div>
@@ -371,7 +388,7 @@
                 </ul>
             </div>
         </div>
-        <div class="pt-12 border-t border-slate-100 flex flex-col md:row justify-between items-center gap-6">
+        <div class="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
             <p class="text-slate-400 text-sm font-bold">© 2026 Dwello Urban Ecosystem. Crafted for Greater Noida.</p>
             <div class="flex gap-8 text-slate-400 font-bold text-xs uppercase tracking-widest">
                 <a href="#" class="hover:text-slate-900">Privacy</a>
@@ -381,33 +398,6 @@
         </div>
     </div>
 </footer>
-
-<script>
-    // Minimal marquee simulation for the ticker
-    const marquee = document.querySelector('.animate-marquee');
-    // If you want more interactivity, we can add a filter script here
-</script>
-
-<style>
-    @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-        display: inline-flex;
-        animation: marquee 30s linear infinite;
-        width: 200%;
-    }
-    @keyframes blob {
-        0% { transform: scale(1); }
-        33% { transform: scale(1.1); }
-        66% { transform: scale(0.9); }
-        100% { transform: scale(1); }
-    }
-    .animate-blob {
-        animation: blob 7s infinite;
-    }
-</style>
 
 </body>
 </html>
