@@ -1,232 +1,413 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dwello | The Full Urban Ecosystem for Greater Noida</title>
-
-<meta name="description" content="Dwello is Greater Noida’s premium urban living ecosystem for rentals, furniture, home services, bill management and community.">
-<meta name="keywords" content="Greater Noida rent, furniture on rent, Dwello, student housing, flats near knowledge park">
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-body { font-family: 'Plus Jakarta Sans', sans-serif; background:#fff; }
-.glass-header { background:rgba(255,255,255,.85); backdrop-filter:blur(20px); border-bottom:1px solid rgba(0,0,0,.05); }
-.hero-gradient { background:radial-gradient(circle at 70% 30%, #f5f3ff 0%, #ffffff 100%); }
-.bento-card { transition:all .5s cubic-bezier(.23,1,.32,1); }
-.bento-card:hover { transform:translateY(-10px); box-shadow:0 30px 60px -12px rgba(79,70,229,.15); }
-.floating { animation:float 6s ease-in-out infinite; }
-@keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)} }
-.text-gradient { background:linear-gradient(to right,#4f46e5,#9333ea); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-button:active { transform:scale(.97); }
-a { scroll-margin-top:120px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwello | The Full Urban Ecosystem for Greater Noida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; }
+        .glass-header { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .hero-gradient { background: radial-gradient(circle at 70% 30%, #f5f3ff 0%, #ffffff 100%); }
+        .bento-card { transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
+        .bento-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 40px 80px -12px rgba(79, 70, 229, 0.2); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+        .text-gradient { background: linear-gradient(to right, #4f46e5, #9333ea, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .feature-tag { @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 bg-white/10 backdrop-blur-md; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
+    </style>
 </head>
-
 <body class="text-slate-900 overflow-x-hidden">
 
-<!-- ================= HEADER ================= -->
 <header class="glass-header sticky top-0 z-[100]">
-<nav class="container mx-auto px-6 py-5 flex justify-between items-center">
-<div class="flex items-center space-x-2">
-<div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
-<i class="fas fa-city text-white text-xl"></i>
-</div>
-<span class="text-2xl font-black tracking-tighter">DWELLO<span class="text-indigo-600">.</span></span>
-</div>
-
-<div class="hidden lg:flex items-center space-x-8 font-bold text-slate-500 text-sm">
-<a href="#services" class="hover:text-indigo-600">Services</a>
-<a href="#how-it-works" class="hover:text-indigo-600">Process</a>
-<a href="#split-bill" class="hover:text-indigo-600">Splitwise Mode</a>
-<a href="#listings" class="hover:text-indigo-600">Explore Homes</a>
-</div>
-
-<div class="flex items-center space-x-6">
-<a href="#" class="hidden md:block font-bold hover:text-indigo-600">Log In</a>
-<button class="bg-indigo-600 text-white px-8 py-3.5 rounded-2xl font-bold shadow-xl hover:bg-indigo-700 transition">Get Started</button>
-</div>
-</nav>
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200 group cursor-pointer">
+                <i class="fas fa-city text-white text-2xl group-hover:rotate-12 transition-transform"></i>
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-slate-900">DWELLO<span class="text-indigo-600">.</span></span>
+        </div>
+        <div class="hidden lg:flex items-center space-x-8 font-bold text-slate-500 text-sm tracking-tight">
+            <a href="#services" class="hover:text-indigo-600 transition flex items-center gap-2">Services <span class="bg-indigo-100 text-indigo-600 text-[10px] px-2 py-0.5 rounded-full">New</span></a>
+            <a href="#how-it-works" class="hover:text-indigo-600 transition">Process</a>
+            <a href="#split-bill" class="hover:text-indigo-600 transition">Splitwise Mode</a>
+            <a href="#community" class="hover:text-indigo-600 transition">Circle Community</a>
+            <a href="#listings" class="hover:text-indigo-600 transition">Explore Homes</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="hidden xl:flex items-center bg-slate-100 px-4 py-2 rounded-xl text-xs font-bold text-slate-600 mr-4">
+                <i class="fas fa-location-dot text-indigo-600 mr-2"></i> Greater Noida
+            </div>
+            <button class="bg-indigo-600 text-white px-8 py-3.5 rounded-2xl font-bold shadow-xl shadow-indigo-100 hover:bg-indigo-700 hover:-translate-y-1 transition-all active:scale-95">Get Started</button>
+        </div>
+    </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero-gradient pt-20 pb-32">
-<div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+<main>
+    <section class="hero-gradient pt-16 pb-32">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div class="relative z-10">
+                <div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                    <span>Greater Noida's #1 Urban OS</span>
+                </div>
+                <h1 class="text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-tighter text-slate-900">
+                    Your City <br><span class="text-gradient">On Autopilot.</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-12 max-w-lg leading-relaxed font-medium">
+                    The only platform that handles your rent, your chores, and your social life. Verified flats, rental furniture, and a community of 5000+ members.
+                </p>
+                
+                <div class="flex flex-col gap-4 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-2xl group focus-within:ring-4 ring-indigo-50 transition-all">
+                    <div class="flex items-center px-4 border-b border-slate-100 pb-2">
+                        <button class="text-sm font-bold text-indigo-600 border-b-2 border-indigo-600 pb-1 mr-6">Find Homes</button>
+                        <button class="text-sm font-bold text-slate-400 hover:text-indigo-600 pb-1 transition mr-6">Find Services</button>
+                        <button class="text-sm font-bold text-slate-400 hover:text-indigo-600 pb-1 transition">Rental Furniture</button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex-grow flex items-center px-4">
+                            <i class="fas fa-search text-slate-400 mr-3"></i>
+                            <input type="text" placeholder="Try 'Sector 150' or 'Cooks near me'..." class="w-full bg-transparent py-4 outline-none font-semibold text-slate-700">
+                        </div>
+                        <button class="bg-slate-900 text-white px-12 py-4 rounded-[2rem] font-black hover:bg-indigo-600 transition-colors">Search Dwello</button>
+                    </div>
+                </div>
 
-<div>
-<div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8">
-<span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
-<span>Greater Noida's Premium Concierge</span>
-</div>
+                <div class="mt-10 flex items-center space-x-8">
+                    <div class="flex -space-x-4">
+                        <img src="https://i.pravatar.cc/100?u=1" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
+                        <img src="https://i.pravatar.cc/100?u=2" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
+                        <img src="https://i.pravatar.cc/100?u=3" class="w-14 h-14 rounded-full border-4 border-white shadow-lg" alt="">
+                        <div class="w-14 h-14 rounded-full bg-indigo-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold">+5k</div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-slate-900">Active Residents Circle</p>
+                        <p class="text-xs text-slate-500 font-medium tracking-tight">Real people, verified profiles in Noida.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative lg:h-[700px] flex items-center justify-center">
+                <div class="absolute top-20 right-0 bg-white/90 backdrop-blur p-4 rounded-3xl shadow-2xl z-20 border border-slate-100 floating">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <p class="text-xs font-black">KYC VERIFIED</p>
+                            <p class="text-[10px] text-slate-500 font-bold">100% Secure Listing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute inset-0 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" class="rounded-[5rem] shadow-2xl z-10 floating relative object-cover h-[600px] w-full" alt="Modern Lifestyle">
+                
+                <div class="absolute -bottom-10 -left-10 bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl z-20 border border-slate-800">
+                    <p class="text-5xl font-black text-indigo-400">0%</p>
+                    <p class="text-sm uppercase font-black tracking-widest text-slate-300">Brokerage Fees</p>
+                    <p class="text-[10px] text-slate-500 mt-2 font-bold uppercase tracking-tighter">*On Dwello Managed Units</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1 class="text-7xl lg:text-9xl font-black leading-[0.85] mb-8 tracking-tighter">
-Urban Life,<br><span class="text-gradient">Simplified.</span>
-</h1>
+    <div class="bg-indigo-600 py-4 overflow-hidden whitespace-nowrap border-y border-white/10">
+        <div class="flex animate-marquee space-x-12 items-center">
+            <span class="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2"><i class="fas fa-fire"></i> New Listings in Sector 150</span>
+            <span class="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2"><i class="fas fa-star"></i> Top Rated Cook: Chef Rahul (KP-2)</span>
+            <span class="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2"><i class="fas fa-bolt"></i> Furniture Renting Now Starts at ₹499</span>
+            <span class="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2"><i class="fas fa-users"></i> Next Community Meetup: Feb 20</span>
+        </div>
+    </div>
 
-<p class="text-xl text-slate-500 mb-12 max-w-lg font-medium">
-The only platform in Greater Noida that handles rent, furniture, services and community—seamlessly.
-</p>
+    <section id="services" class="py-32 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-6xl font-black tracking-tighter mb-6 text-slate-900 leading-none">The Urban <br>Stack.</h2>
+                    <p class="text-slate-500 text-xl font-medium">Why juggle ten apps when Dwello handles the heavy lifting? From moving in to moving up, we’ve got your back.</p>
+                </div>
+                <button class="bg-slate-100 text-slate-900 px-8 py-4 rounded-2xl font-bold hover:bg-indigo-600 hover:text-white transition-all">View All 15+ Services</button>
+            </div>
 
-<div class="flex gap-4 bg-white p-3 rounded-[2.5rem] shadow-2xl border max-w-2xl">
-<div class="flex-grow flex items-center px-4">
-<i class="fas fa-search text-slate-400 mr-3"></i>
-<input id="smartSearch" type="text" placeholder="Sector 150, Cook near me, Studio flat..."
-class="w-full bg-transparent py-4 outline-none font-semibold">
-</div>
-<button class="bg-slate-900 text-white px-12 py-4 rounded-[2rem] font-black hover:bg-indigo-600 transition">
-Find Solutions
-</button>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bento-card md:col-span-2 p-10 rounded-[3.5rem] bg-slate-50 border border-slate-100 flex flex-col justify-between group h-[450px]">
+                    <div>
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md mb-8 group-hover:bg-indigo-600 transition-colors duration-500">
+                            <i class="fas fa-key text-indigo-600 text-2xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-3xl font-black mb-4">Prime Rentals</h3>
+                        <p class="text-slate-500 font-medium leading-relaxed max-w-sm text-lg">Every home is physically inspected. Zero brokerage on select apartments in Greater Noida West.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-xl text-xs font-black">STUDIOS</span>
+                        <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-xl text-xs font-black">VILLAS</span>
+                    </div>
+                </div>
 
-<p id="searchHint" class="text-xs text-slate-400 mt-3"></p>
+                <div class="bento-card p-10 rounded-[3.5rem] bg-indigo-600 text-white md:col-span-2 md:row-span-2 flex flex-col justify-center relative overflow-hidden h-full">
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-indigo-500 rounded-3xl flex items-center justify-center mb-10 shadow-lg">
+                            <i class="fas fa-bolt text-3xl"></i>
+                        </div>
+                        <h3 class="text-5xl font-black mb-6 leading-tight">Dwello <br>Smart Hub</h3>
+                        <p class="text-indigo-100 text-xl font-medium mb-10">Manage Wi-Fi, Electricity, Maid payments, and Rent from a single dashboard. Automated. Paperless.</p>
+                        <button class="bg-white text-indigo-600 px-10 py-5 rounded-2xl font-black w-full hover:scale-[1.02] transition shadow-xl">Launch Dashboard</button>
+                    </div>
+                    <i class="fas fa-mobile-screen absolute -bottom-10 -right-10 text-[20rem] text-indigo-700 opacity-20"></i>
+                </div>
 
-<div class="mt-10 flex items-center space-x-6">
-<p class="text-sm font-bold text-slate-500">
-<span class="text-slate-900">5,000+</span> residents already onboard
-</p>
-</div>
-</div>
+                <div class="bento-card p-10 rounded-[3.5rem] bg-slate-900 text-white flex flex-col justify-between group">
+                    <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center shadow-md mb-8">
+                        <i class="fas fa-couch text-indigo-400 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black mb-2">Furnish</h3>
+                        <p class="text-slate-400 font-medium leading-relaxed">Rent high-end sofas & beds with 24h delivery.</p>
+                    </div>
+                </div>
 
-<div class="relative lg:h-[600px] flex items-center justify-center">
-<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
-class="rounded-[4rem] shadow-2xl floating object-cover h-[550px] w-full">
-</div>
+                <div class="bento-card p-10 rounded-[3.5rem] bg-slate-50 border border-slate-100 flex flex-col justify-between group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md mb-8">
+                        <i class="fas fa-utensils text-indigo-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black mb-2">Certified Cooks</h3>
+                        <p class="text-slate-500 font-medium leading-relaxed">Background verified home chefs for your flat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-</section>
+    <section id="community" class="py-32 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-[4rem] p-12 lg:p-20 shadow-xl border border-slate-100 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs">The Dwello Circle</span>
+                    <h2 class="text-6xl font-black tracking-tighter mt-4 mb-8">More than just <br>neighbors.</h2>
+                    <p class="text-slate-500 text-xl font-medium mb-12">Join exclusive local events, hobby clubs, and a marketplace for residents only. Built to end urban loneliness in Greater Noida.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 p-4 rounded-3xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center font-bold">1</div>
+                            <p class="font-bold text-slate-800 text-lg">Verified Resident Socials</p>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-3xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center font-bold">2</div>
+                            <p class="font-bold text-slate-800 text-lg">Peer-to-Peer Marketplace</p>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-3xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center font-bold">3</div>
+                            <p class="font-bold text-slate-800 text-lg">Interest-based Hubs (Yoga, Tech, Sports)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="rounded-[2.5rem] w-full h-64 object-cover shadow-lg" alt="">
+                        <div class="bg-indigo-600 p-8 rounded-[2.5rem] text-white">
+                            <p class="text-3xl font-black">12+</p>
+                            <p class="text-xs font-bold uppercase tracking-widest opacity-80">Weekly Events</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-900 p-8 rounded-[2.5rem] text-white">
+                            <p class="text-3xl font-black">5.2k</p>
+                            <p class="text-xs font-bold uppercase tracking-widest opacity-80">Members</p>
+                        </div>
+                        <img src="https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg" class="rounded-[2.5rem] w-full h-80 object-cover shadow-lg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= STATS ================= -->
-<section class="py-12 bg-slate-900">
-<div class="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-<div><p class="text-4xl font-black text-white">1.2k+</p><p class="text-indigo-400 text-xs font-bold">VERIFIED HOMES</p></div>
-<div><p class="text-4xl font-black text-white">450+</p><p class="text-indigo-400 text-xs font-bold">APPLIANCES</p></div>
-<div><p class="text-4xl font-black text-white">85+</p><p class="text-indigo-400 text-xs font-bold">SERVICE PARTNERS</p></div>
-<div><p class="text-4xl font-black text-white">24/7</p><p class="text-indigo-400 text-xs font-bold">SUPPORT</p></div>
-</div>
-</section>
+    <section id="split-bill" class="py-32 bg-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div class="bg-slate-950 p-12 rounded-[4rem] shadow-2xl relative overflow-hidden order-2 lg:order-1">
+                <div class="absolute top-0 right-0 w-full h-32 bg-gradient-to-b from-indigo-500/10 to-transparent"></div>
+                <div class="relative z-10">
+                    <div class="flex justify-between items-center mb-10">
+                        <h4 class="text-indigo-400 font-black uppercase tracking-[0.2em] text-xs">Financial Ecosystem</h4>
+                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-[10px] font-bold">LIVE SYNC</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 backdrop-blur-xl p-6 rounded-[2rem] flex justify-between items-center border border-white/10 hover:border-indigo-500/50 transition cursor-pointer">
+                            <div class="flex items-center space-x-5">
+                                <div class="w-14 h-14 bg-indigo-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg"><i class="fas fa-wifi"></i></div>
+                                <div><p class="text-white font-bold">Gigabit Fiber</p><p class="text-slate-500 text-xs">Due in 2 days</p></div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-white font-black text-xl">₹999</p>
+                                <p class="text-indigo-400 text-[10px] font-bold">SPLIT 3 WAYS</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-xl p-6 rounded-[2rem] flex justify-between items-center border border-white/10 hover:border-indigo-500/50 transition cursor-pointer">
+                            <div class="flex items-center space-x-5">
+                                <div class="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg"><i class="fas fa-utensils"></i></div>
+                                <div><p class="text-white font-bold">Daily Cook</p><p class="text-slate-500 text-xs">Monthly Fixed</p></div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-white font-black text-xl">₹6,000</p>
+                                <p class="text-indigo-400 text-[10px] font-bold">SPLIT 2 WAYS</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-8 bg-indigo-600/10 rounded-[2.5rem] border border-indigo-500/20">
+                        <div class="flex justify-between items-center mb-6">
+                            <p class="text-slate-400 font-bold">Your Personal Share</p>
+                            <p class="text-indigo-400 font-black text-4xl">₹3,333</p>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white p-6 rounded-2xl text-center font-black cursor-pointer hover:bg-indigo-500 transition-all shadow-2xl active:scale-95">
+                            Settle All via UPI
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2">
+                <h2 class="text-7xl font-black mb-8 tracking-tighter leading-[0.9] text-slate-900">Roommates <br>Simplified<span class="text-indigo-600">.</span></h2>
+                <p class="text-slate-500 text-xl mb-10 leading-relaxed font-medium">
+                    Automated expense tracking that actually works. Dwello integrates directly with local utility providers and service staff, splitting costs before you even see the bill.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h5 class="font-black text-slate-900 text-lg">Smart Nudges</h5>
+                        <p class="text-slate-500 text-sm font-medium mt-2">Gentle auto-reminders for roommates.</p>
+                    </div>
+                    <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h5 class="font-black text-slate-900 text-lg">Auto-Pay</h5>
+                        <p class="text-slate-500 text-sm font-medium mt-2">Never miss a bill with pre-approved splits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" class="py-32 bg-white">
-<div class="container mx-auto px-6 text-center mb-20">
-<h2 class="text-5xl font-black mb-6">One App. Every Solution.</h2>
-<p class="text-slate-500 text-lg font-medium">Rent. Furnish. Manage. Belong.</p>
-</div>
+    <section class="py-24 bg-slate-900 overflow-hidden relative">
+        <div class="container mx-auto px-6">
+            <div class="relative z-10 flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-6xl font-black text-white tracking-tighter mb-8 leading-tight">Everything in <br>your <span class="text-indigo-400">pocket.</span></h2>
+                    <p class="text-slate-400 text-xl font-medium mb-12">Download the Dwello Super-App. Control your home, pay your bills, and meet your community from one dashboard.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black flex items-center gap-3 hover:scale-105 transition">
+                            <i class="fab fa-apple text-2xl"></i> App Store
+                        </button>
+                        <button class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-black flex items-center gap-3 hover:scale-105 transition">
+                            <i class="fab fa-google-play text-2xl"></i> Play Store
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-72 h-[580px] bg-slate-800 rounded-[3rem] border-8 border-slate-700 shadow-2xl overflow-hidden relative">
+                            <div class="absolute top-0 w-full h-6 bg-slate-700"></div>
+                            <img src="https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg" class="w-full h-full object-cover opacity-80" alt="App Preview">
+                            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex flex-col justify-end p-8">
+                                <p class="text-white font-black text-2xl">Welcome Back, Sarah</p>
+                                <p class="text-indigo-300 font-bold text-xs uppercase">Sector 150 resident</p>
+                            </div>
+                        </div>
+                        <div class="absolute -right-20 top-20 bg-indigo-500 p-6 rounded-3xl shadow-2xl animate-bounce">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 skew-x-12 transform translate-x-32"></div>
+    </section>
+</main>
 
-<div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-<div class="bento-card p-10 rounded-[3.5rem] bg-slate-50">
-<h3 class="text-2xl font-black mb-4">Prime Rentals</h3>
-<p class="text-slate-500">Physically verified flats across Greater Noida.</p>
-</div>
-
-<div class="bento-card p-10 rounded-[3.5rem] bg-indigo-600 text-white md:row-span-2">
-<h3 class="text-4xl font-black mb-6">Smart Management</h3>
-<p class="text-indigo-100 mb-10">Bills, Wi-Fi, services—all in one dashboard.</p>
-</div>
-
-<div class="bento-card p-10 rounded-[3.5rem] bg-slate-50">
-<h3 class="text-2xl font-black mb-4">Furnish Fast</h3>
-<p class="text-slate-500">Furniture & appliances on flexible plans.</p>
-</div>
-</div>
-</section>
-
-<!-- ================= LISTINGS ================= -->
-<section id="listings" class="py-28 bg-slate-50">
-<div class="container mx-auto px-6">
-<h2 class="text-4xl font-black text-center mb-12">Popular Homes Near You</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bento-card bg-white p-6 rounded-[2rem]">
-<p class="font-black">2BHK • Sector 150</p>
-<p class="text-slate-500 text-sm">₹15,500 / month</p>
-</div>
-<div class="bento-card bg-white p-6 rounded-[2rem]">
-<p class="font-black">Studio • Knowledge Park</p>
-<p class="text-slate-500 text-sm">₹9,800 / month</p>
-</div>
-<div class="bento-card bg-white p-6 rounded-[2rem]">
-<p class="font-black">3BHK • Techzone</p>
-<p class="text-slate-500 text-sm">₹21,000 / month</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ================= SPLIT BILL ================= -->
-<section id="split-bill" class="py-32 bg-white">
-<div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-<div>
-<h2 class="text-6xl font-black mb-8">Roommates Made <span class="text-indigo-600">Easy.</span></h2>
-<p class="text-slate-500 text-xl font-medium">
-Automated expense tracking with real reminders and insights.
-</p>
-</div>
-<div class="bg-slate-950 p-12 rounded-[4rem] text-white shadow-2xl">
-<p class="text-indigo-400 font-black uppercase text-xs mb-6">Live Activity</p>
-<p id="activityPulse" class="text-sm text-slate-300"></p>
-</div>
-</div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="py-24">
-<div class="container mx-auto px-6">
-<div class="bg-indigo-600 rounded-[4rem] p-16 text-center shadow-2xl">
-<h2 class="text-6xl font-black text-white mb-8">Ready to Dwello?</h2>
-<p class="text-indigo-100 mb-12 text-xl">Urban living, finally simplified.</p>
-<button class="bg-white text-indigo-600 px-12 py-5 rounded-[2rem] font-black text-lg">
-Get Started
-</button>
-</div>
-</div>
-</section>
-
-<!-- ================= STICKY CTA ================= -->
-<div id="stickyCTA" class="fixed bottom-6 right-6 bg-indigo-600 text-white px-6 py-4 rounded-2xl font-black shadow-2xl hidden">
-Explore Homes →
-</div>
-
-<!-- ================= FOOTER ================= -->
-<footer class="bg-slate-50 py-12 text-center text-sm text-slate-400">
-© 2025 Dwello Urban Ecosystem. Crafted for Modern India.
+<footer class="bg-white pt-32 pb-12 border-t border-slate-100">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center space-x-2 mb-8">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-city text-white text-2xl"></i>
+                    </div>
+                    <span class="text-3xl font-black tracking-tighter">DWELLO.</span>
+                </div>
+                <p class="text-slate-500 text-lg font-medium max-w-sm mb-10 leading-relaxed">
+                    Revolutionizing urban living in Greater Noida through technology, community, and radical transparency.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Ecosystem</h5>
+                <ul class="space-y-4 font-bold text-slate-500 text-sm">
+                    <li><a href="#" class="hover:text-indigo-600 transition">Managed Homes</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Furniture Subscription</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Kitchen Pros</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Circle Social</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Company</h5>
+                <ul class="space-y-4 font-bold text-slate-500 text-sm">
+                    <li><a href="#" class="hover:text-indigo-600 transition">About Dwello</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Partner with us</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Careers <span class="ml-2 bg-green-100 text-green-600 px-2 py-0.5 rounded text-[10px]">Hiring</span></a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Safety Standards</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-12 border-t border-slate-100 flex flex-col md:row justify-between items-center gap-6">
+            <p class="text-slate-400 text-sm font-bold">© 2026 Dwello Urban Ecosystem. Crafted for Greater Noida.</p>
+            <div class="flex gap-8 text-slate-400 font-bold text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-slate-900">Privacy</a>
+                <a href="#" class="hover:text-slate-900">Terms</a>
+                <a href="#" class="hover:text-slate-900">Security</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
-<!-- ================= JS ================= -->
 <script>
-const hints = [
-  "2BHK in Sector 150",
-  "Studio near Knowledge Park",
-  "Cook in Pari Chowk",
-  "Furniture on Rent",
-  "Flats under 15k"
-];
-
-document.getElementById("smartSearch").addEventListener("input", e => {
-  if(e.target.value.length > 1)
-    document.getElementById("searchHint").innerText =
-      hints[Math.floor(Math.random()*hints.length)];
-});
-
-const pulses = [
-  "🟢 A flat was booked 2 minutes ago",
-  "🔵 Someone rented a sofa near Techzone",
-  "🟣 New user joined Dwello Circle",
-  "🟠 Cook booked in Sector 62"
-];
-
-setInterval(() => {
-  document.getElementById("activityPulse").innerText =
-    pulses[Math.floor(Math.random()*pulses.length)];
-}, 4000);
-
-window.addEventListener("scroll", () => {
-  document.getElementById("stickyCTA")
-    .classList.toggle("hidden", window.scrollY < 700);
-});
+    // Minimal marquee simulation for the ticker
+    const marquee = document.querySelector('.animate-marquee');
+    // If you want more interactivity, we can add a filter script here
 </script>
+
+<style>
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        display: inline-flex;
+        animation: marquee 30s linear infinite;
+        width: 200%;
+    }
+    @keyframes blob {
+        0% { transform: scale(1); }
+        33% { transform: scale(1.1); }
+        66% { transform: scale(0.9); }
+        100% { transform: scale(1); }
+    }
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+</style>
 
 </body>
 </html>
