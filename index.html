@@ -1,130 +1,231 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dwello | Urban Living Simplified</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Dwello | The Full Urban Ecosystem for Greater Noida</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="description" content="Dwello is Greater Noida’s premium urban living ecosystem for rentals, furniture, home services, bill management and community.">
+<meta name="keywords" content="Greater Noida rent, furniture on rent, Dwello, student housing, flats near knowledge park">
 
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .hidden-view { display: none; }
-  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body { font-family: 'Plus Jakarta Sans', sans-serif; background:#fff; }
+.glass-header { background:rgba(255,255,255,.85); backdrop-filter:blur(20px); border-bottom:1px solid rgba(0,0,0,.05); }
+.hero-gradient { background:radial-gradient(circle at 70% 30%, #f5f3ff 0%, #ffffff 100%); }
+.bento-card { transition:all .5s cubic-bezier(.23,1,.32,1); }
+.bento-card:hover { transform:translateY(-10px); box-shadow:0 30px 60px -12px rgba(79,70,229,.15); }
+.floating { animation:float 6s ease-in-out infinite; }
+@keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)} }
+.text-gradient { background:linear-gradient(to right,#4f46e5,#9333ea); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+button:active { transform:scale(.97); }
+a { scroll-margin-top:120px; }
+</style>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="text-slate-900 overflow-x-hidden">
 
 <!-- ================= HEADER ================= -->
-<header class="sticky top-0 z-50 bg-white border-b">
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-black">DWELLO<span class="text-indigo-600">.</span></h1>
-    <div class="space-x-6 font-bold">
-      <button onclick="showLogin()" class="text-slate-700 hover:text-indigo-600">Log In</button>
-      <button onclick="showLogin()" class="bg-indigo-600 text-white px-6 py-2 rounded-xl">Get Started</button>
-    </div>
-  </nav>
+<header class="glass-header sticky top-0 z-[100]">
+<nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+<div class="flex items-center space-x-2">
+<div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+<i class="fas fa-city text-white text-xl"></i>
+</div>
+<span class="text-2xl font-black tracking-tighter">DWELLO<span class="text-indigo-600">.</span></span>
+</div>
+
+<div class="hidden lg:flex items-center space-x-8 font-bold text-slate-500 text-sm">
+<a href="#services" class="hover:text-indigo-600">Services</a>
+<a href="#how-it-works" class="hover:text-indigo-600">Process</a>
+<a href="#split-bill" class="hover:text-indigo-600">Splitwise Mode</a>
+<a href="#listings" class="hover:text-indigo-600">Explore Homes</a>
+</div>
+
+<div class="flex items-center space-x-6">
+<a href="#" class="hidden md:block font-bold hover:text-indigo-600">Log In</a>
+<button class="bg-indigo-600 text-white px-8 py-3.5 rounded-2xl font-bold shadow-xl hover:bg-indigo-700 transition">Get Started</button>
+</div>
+</nav>
 </header>
 
-<!-- ================= HOME ================= -->
-<main id="homeView">
+<!-- ================= HERO ================= -->
+<section class="hero-gradient pt-20 pb-32">
+<div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
-<section class="py-24 text-center bg-slate-50">
-  <h2 class="text-6xl font-black mb-6">Urban Life,<br><span class="text-indigo-600">Simplified.</span></h2>
-  <p class="text-slate-500 max-w-xl mx-auto mb-10">
-    Rent homes, furniture, manage bills and build community — all in one platform.
-  </p>
-  <button onclick="showLogin()" class="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold">
-    Explore Dwello
-  </button>
-</section>
-
-<section class="py-20 container mx-auto px-6 grid md:grid-cols-3 gap-10">
-  <div class="p-8 bg-white shadow rounded-3xl">
-    <i class="fas fa-home text-indigo-600 text-3xl mb-4"></i>
-    <h3 class="font-black text-xl mb-2">Verified Rentals</h3>
-    <p class="text-slate-500">No brokers. No surprises.</p>
-  </div>
-  <div class="p-8 bg-white shadow rounded-3xl">
-    <i class="fas fa-couch text-indigo-600 text-3xl mb-4"></i>
-    <h3 class="font-black text-xl mb-2">Furniture on Rent</h3>
-    <p class="text-slate-500">Move in, instantly.</p>
-  </div>
-  <div class="p-8 bg-white shadow rounded-3xl">
-    <i class="fas fa-users text-indigo-600 text-3xl mb-4"></i>
-    <h3 class="font-black text-xl mb-2">Community</h3>
-    <p class="text-slate-500">Meet people like you.</p>
-  </div>
-</section>
-
-</main>
-
-<!-- ================= DASHBOARD ================= -->
-<main id="dashboardView" class="hidden-view">
-
-<div class="flex min-h-screen">
-  <aside class="w-64 bg-slate-900 text-white p-6">
-    <h2 class="font-black text-2xl mb-10">DWELLO</h2>
-    <ul class="space-y-4 font-bold">
-      <li>🏠 My Home</li>
-      <li>💸 Split Bills</li>
-      <li>🛋 Rentals</li>
-      <li>❤️ Wishlist</li>
-      <li class="cursor-pointer text-red-400" onclick="logout()">Logout</li>
-    </ul>
-  </aside>
-
-  <main class="flex-1 p-10 bg-slate-100">
-    <h1 class="text-4xl font-black mb-8">Welcome 👋</h1>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl shadow">Rent: ₹14,000</div>
-      <div class="bg-white p-6 rounded-2xl shadow">Bills Due: ₹3,900</div>
-      <div class="bg-white p-6 rounded-2xl shadow">Saved Homes: 4</div>
-    </div>
-  </main>
+<div>
+<div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8">
+<span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
+<span>Greater Noida's Premium Concierge</span>
 </div>
 
-</main>
+<h1 class="text-7xl lg:text-9xl font-black leading-[0.85] mb-8 tracking-tighter">
+Urban Life,<br><span class="text-gradient">Simplified.</span>
+</h1>
 
-<!-- ================= LOGIN MODAL ================= -->
-<div id="loginModal" class="fixed inset-0 bg-black/40 flex items-center justify-center hidden-view">
-  <div class="bg-white p-10 rounded-3xl w-full max-w-md">
-    <h3 class="text-3xl font-black mb-6 text-center">Login to Dwello</h3>
-    <form onsubmit="login(event)" class="space-y-5">
-      <input required placeholder="Email" class="w-full px-4 py-3 border rounded-xl">
-      <input required type="password" placeholder="Password" class="w-full px-4 py-3 border rounded-xl">
-      <button class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold">Login</button>
-    </form>
-    <button onclick="closeLogin()" class="mt-4 text-sm text-slate-500 w-full">Cancel</button>
-  </div>
+<p class="text-xl text-slate-500 mb-12 max-w-lg font-medium">
+The only platform in Greater Noida that handles rent, furniture, services and community—seamlessly.
+</p>
+
+<div class="flex gap-4 bg-white p-3 rounded-[2.5rem] shadow-2xl border max-w-2xl">
+<div class="flex-grow flex items-center px-4">
+<i class="fas fa-search text-slate-400 mr-3"></i>
+<input id="smartSearch" type="text" placeholder="Sector 150, Cook near me, Studio flat..."
+class="w-full bg-transparent py-4 outline-none font-semibold">
+</div>
+<button class="bg-slate-900 text-white px-12 py-4 rounded-[2rem] font-black hover:bg-indigo-600 transition">
+Find Solutions
+</button>
 </div>
 
-<!-- ================= SCRIPT ================= -->
+<p id="searchHint" class="text-xs text-slate-400 mt-3"></p>
+
+<div class="mt-10 flex items-center space-x-6">
+<p class="text-sm font-bold text-slate-500">
+<span class="text-slate-900">5,000+</span> residents already onboard
+</p>
+</div>
+</div>
+
+<div class="relative lg:h-[600px] flex items-center justify-center">
+<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+class="rounded-[4rem] shadow-2xl floating object-cover h-[550px] w-full">
+</div>
+
+</div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="py-12 bg-slate-900">
+<div class="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+<div><p class="text-4xl font-black text-white">1.2k+</p><p class="text-indigo-400 text-xs font-bold">VERIFIED HOMES</p></div>
+<div><p class="text-4xl font-black text-white">450+</p><p class="text-indigo-400 text-xs font-bold">APPLIANCES</p></div>
+<div><p class="text-4xl font-black text-white">85+</p><p class="text-indigo-400 text-xs font-bold">SERVICE PARTNERS</p></div>
+<div><p class="text-4xl font-black text-white">24/7</p><p class="text-indigo-400 text-xs font-bold">SUPPORT</p></div>
+</div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="py-32 bg-white">
+<div class="container mx-auto px-6 text-center mb-20">
+<h2 class="text-5xl font-black mb-6">One App. Every Solution.</h2>
+<p class="text-slate-500 text-lg font-medium">Rent. Furnish. Manage. Belong.</p>
+</div>
+
+<div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+<div class="bento-card p-10 rounded-[3.5rem] bg-slate-50">
+<h3 class="text-2xl font-black mb-4">Prime Rentals</h3>
+<p class="text-slate-500">Physically verified flats across Greater Noida.</p>
+</div>
+
+<div class="bento-card p-10 rounded-[3.5rem] bg-indigo-600 text-white md:row-span-2">
+<h3 class="text-4xl font-black mb-6">Smart Management</h3>
+<p class="text-indigo-100 mb-10">Bills, Wi-Fi, services—all in one dashboard.</p>
+</div>
+
+<div class="bento-card p-10 rounded-[3.5rem] bg-slate-50">
+<h3 class="text-2xl font-black mb-4">Furnish Fast</h3>
+<p class="text-slate-500">Furniture & appliances on flexible plans.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= LISTINGS ================= -->
+<section id="listings" class="py-28 bg-slate-50">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-black text-center mb-12">Popular Homes Near You</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bento-card bg-white p-6 rounded-[2rem]">
+<p class="font-black">2BHK • Sector 150</p>
+<p class="text-slate-500 text-sm">₹15,500 / month</p>
+</div>
+<div class="bento-card bg-white p-6 rounded-[2rem]">
+<p class="font-black">Studio • Knowledge Park</p>
+<p class="text-slate-500 text-sm">₹9,800 / month</p>
+</div>
+<div class="bento-card bg-white p-6 rounded-[2rem]">
+<p class="font-black">3BHK • Techzone</p>
+<p class="text-slate-500 text-sm">₹21,000 / month</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= SPLIT BILL ================= -->
+<section id="split-bill" class="py-32 bg-white">
+<div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-6xl font-black mb-8">Roommates Made <span class="text-indigo-600">Easy.</span></h2>
+<p class="text-slate-500 text-xl font-medium">
+Automated expense tracking with real reminders and insights.
+</p>
+</div>
+<div class="bg-slate-950 p-12 rounded-[4rem] text-white shadow-2xl">
+<p class="text-indigo-400 font-black uppercase text-xs mb-6">Live Activity</p>
+<p id="activityPulse" class="text-sm text-slate-300"></p>
+</div>
+</div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-24">
+<div class="container mx-auto px-6">
+<div class="bg-indigo-600 rounded-[4rem] p-16 text-center shadow-2xl">
+<h2 class="text-6xl font-black text-white mb-8">Ready to Dwello?</h2>
+<p class="text-indigo-100 mb-12 text-xl">Urban living, finally simplified.</p>
+<button class="bg-white text-indigo-600 px-12 py-5 rounded-[2rem] font-black text-lg">
+Get Started
+</button>
+</div>
+</div>
+</section>
+
+<!-- ================= STICKY CTA ================= -->
+<div id="stickyCTA" class="fixed bottom-6 right-6 bg-indigo-600 text-white px-6 py-4 rounded-2xl font-black shadow-2xl hidden">
+Explore Homes →
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-slate-50 py-12 text-center text-sm text-slate-400">
+© 2025 Dwello Urban Ecosystem. Crafted for Modern India.
+</footer>
+
+<!-- ================= JS ================= -->
 <script>
-  function showLogin() {
-    document.getElementById('loginModal').classList.remove('hidden-view');
-  }
+const hints = [
+  "2BHK in Sector 150",
+  "Studio near Knowledge Park",
+  "Cook in Pari Chowk",
+  "Furniture on Rent",
+  "Flats under 15k"
+];
 
-  function closeLogin() {
-    document.getElementById('loginModal').classList.add('hidden-view');
-  }
+document.getElementById("smartSearch").addEventListener("input", e => {
+  if(e.target.value.length > 1)
+    document.getElementById("searchHint").innerText =
+      hints[Math.floor(Math.random()*hints.length)];
+});
 
-  function login(e) {
-    e.preventDefault();
-    closeLogin();
-    document.getElementById('homeView').classList.add('hidden-view');
-    document.getElementById('dashboardView').classList.remove('hidden-view');
-  }
+const pulses = [
+  "🟢 A flat was booked 2 minutes ago",
+  "🔵 Someone rented a sofa near Techzone",
+  "🟣 New user joined Dwello Circle",
+  "🟠 Cook booked in Sector 62"
+];
 
-  function logout() {
-    document.getElementById('dashboardView').classList.add('hidden-view');
-    document.getElementById('homeView').classList.remove('hidden-view');
-  }
+setInterval(() => {
+  document.getElementById("activityPulse").innerText =
+    pulses[Math.floor(Math.random()*pulses.length)];
+}, 4000);
+
+window.addEventListener("scroll", () => {
+  document.getElementById("stickyCTA")
+    .classList.toggle("hidden", window.scrollY < 700);
+});
 </script>
 
 </body>
